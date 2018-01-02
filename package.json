@@ -9,7 +9,7 @@
     "serve": "serve -p 8080",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [ 'weex-slide-to-edit', 'slide-to-edit', 'slide' ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
