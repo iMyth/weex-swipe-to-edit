@@ -36,14 +36,6 @@
         const navHeight = isWeb() ? 0 : (isIPhoneX() ? 84 : 40)
         return env.deviceHeight / env.deviceWidth * 750 - navHeight
       }
-    },
-
-    created () { },
-
-    methods: {
-      handler (e) {
-        console.log(e)
-      }
     }
   }
 </script>

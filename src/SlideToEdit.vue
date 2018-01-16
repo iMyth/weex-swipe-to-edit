@@ -23,9 +23,7 @@
 
 <script>
 const animation = weex.requireModule('animation')
-// var modal = weex.requireModule('modal')
 let currentX = 0
-// let isHorizontal = false
 
 export default {
   name: 'slide-to-edit',
@@ -40,9 +38,6 @@ export default {
     }
   },
   methods: {
-    handler (e) {
-      console.log(e, e.changedTouches[0])
-    },
     restore () {
       this.lastX = 0
       animation.transition(this.$refs.labelLayer, {

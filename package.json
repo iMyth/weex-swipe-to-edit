@@ -26,24 +26,27 @@
   "author": "Myth",
   "license": "Apache-2.0",
   "dependencies": {
-    "vue": "^2.1.10",
-    "vue-router": "^2.1.1",
-    "vuex": "^2.1.1",
-    "vuex-router-sync": "^4.0.1",
-    "weex-vue-render": "^0.12.3"
+    "fs-extra": "^4.0.3",
+    "vue": "^2.5.13",
+    "weex-html5": "^0.4.1",
+    "weex-vue-render": "^1.0.13"
   },
   "devDependencies": {
+    "autoprefixer": "^7.2.5",
     "babel-core": "^6.20.0",
     "babel-loader": "^6.2.9",
-    "babel-plugin-component": "^1.0.0",
+    "babel-plugin-component": "^1.1.0",
     "babel-preset-es2015": "^6.18.0",
     "css-loader": "^0.26.1",
+    "postcss-plugin-px2rem": "^0.7.0",
+    "postcss-plugin-weex": "^0.1.6",
     "serve": "^1.4.0",
+    "uglifyjs-webpack-plugin": "^1.1.6",
     "url-loader": "^0.6.2",
-    "vue-loader": "^10.0.2",
+    "vue-loader": "^12.2.2",
     "vue-template-compiler": "^2.1.10",
     "webpack": "^2.2.1",
-    "weex-loader": "^0.4.4",
-    "weex-ui": "^0.3.10"
+    "weex-loader": "^0.6.9",
+    "weex-vue-precompiler": "^0.1.17"
   }
 }
