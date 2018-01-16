@@ -1,14 +1,20 @@
 <template>
   <div class="slide-to-edit">
     <div class="edit-layer">
-      <text @click="$emit('onedit', 'onedit')" class="edit">Edit</text>
-      <text @click="$emit('ondelete', 'ondelete')" class="del">Del</text>
+      <div class="edit">
+        <image class="edit-icon" :src="hideIcon" />
+        <text @click="$emit('onedit', 'onedit')" class="edit-label">hide</text>
+      </div>
+      <div class="del">
+        <image class="del-icon" :src="editIcon" />
+        <text @click="$emit('ondelete', 'ondelete')" class="del-label">delete</text>
+      </div>
     </div>
     <div class="label-layer"
       ref="labelLayer"
-      @panstart="onTouchStart"
-      @panmove="onTouchMove"
-      @panend="onTouchEnd"
+      @panstart="onTouchStart($event)"
+      @panmove="onTouchMove($event)"
+      @panend="onTouchEnd($event)"
     >
       <slot name="container"></slot>
     </div>
@@ -17,16 +23,20 @@
 
 <script>
 const animation = weex.requireModule('animation')
+// var modal = weex.requireModule('modal')
 let currentX = 0
-let isHorizontal = false
+// let isHorizontal = false
 
 export default {
   name: 'slide-to-edit',
+  props: { },
   data () {
     return {
       startX: 0,
-      maxX: 200,
-      lastX: 0
+      maxX: 280,
+      lastX: 0,
+      editIcon: require('./assets/delete.png'),
+      hideIcon: require('./assets/hide.png')
     }
   },
   methods: {
@@ -45,10 +55,10 @@ export default {
       }, () => { })
     },
     gotoEdit () {
-      this.lastX = 200
+      this.lastX = 280
       animation.transition(this.$refs.labelLayer, {
         styles: {
-          transform: 'translateX(-200px)'
+          transform: 'translateX(-280px)'
         },
         timingFunction: 'cubic-bezier(0.4, 0, 0.2, 1.2)',
         delay: 0,
@@ -56,21 +66,16 @@ export default {
       }, () => { })
     },
     onTouchStart (e) {
-      // TODO: ...
-      console.log('onTouchStart', e.changedTouches[0])
-      this.startX = e.changedTouches[0].clientX
-      isHorizontal = false
+      this.startX = e.changedTouches[0].pageX
     },
     onTouchMove (e) {
-      // TODO: ...
-      console.log('onTouchMove', e.changedTouches[0])
       // buggie, event conflicting on list
-      let moveX = e.changedTouches[0].clientX - this.startX - this.lastX
+      let moveX = e.changedTouches[0].pageX - this.startX - this.lastX
       if (moveX > 0) {
         moveX = 0
       }
-      if (moveX < -200) {
-        moveX = -200
+      if (moveX < -280) {
+        moveX = -280
       }
       currentX = moveX
       animation.transition(this.$refs.labelLayer, {
@@ -83,8 +88,6 @@ export default {
       }, () => { })
     },
     onTouchEnd (e) {
-      // TODO: ...
-      console.log('onTouchEnd')
       if (Math.abs(currentX) > this.maxX / 2) {
         this.gotoEdit()
       } else {
@@ -103,17 +106,33 @@ export default {
   justify-content: flex-end;
 }
 .edit {
-  background-color: yellow; color: black;
+  background-color: #EDEDED;
+}
+.edit:active {
+  background-color: #DDD7D7;
 }
 .del {
-  background-color: red; color: white;
+  background-color: #F64A4E;
+}
+.del:active {
+  background-color: #DB4144;
+}
+.edit-label {
+  color: #7D7D7D; font-size: 24px;
+}
+.del-label {
+  color: white; font-size: 24px;
 }
 .edit, .del {
-  width: 100px; text-align: center; height: 80px; align-items: center;
-  line-height: 80px;
+  width: 140px; text-align: center; height: 104px; align-items: center; justify-content: center;
+}
+.edit-icon, .del-icon {
+  height: 52px; width: 52px;
 }
 .label-layer {
-  background-color: gray;
+  background-color: #fff;
+}
+.slide-to-edit {
+  height: 104px; overflow: hidden;
 }
 </style>
-

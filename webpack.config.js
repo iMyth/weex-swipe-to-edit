@@ -36,6 +36,9 @@ function getBaseConfig () {
           exclude: /node_modules/
         }, {
           test: /\.vue(\?[^?]+)?$/
+        }, {
+          test: /\.(png|jpe?g|svg)(\?.*)?$/,
+          loader: 'url-loader'
         }
       ]
     },
