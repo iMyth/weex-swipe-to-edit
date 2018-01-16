@@ -1,5 +1,8 @@
 # weex-slide-to-edit
 
+## Demo
+[Live Demo](https://imyth.github.io/weex-slide-to-edit/)*
+
 ## How to start
 
 ### Install
