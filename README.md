@@ -1,6 +1,6 @@
 # weex-slide-to-edit
 
-## Demo
+## Demo for mobile devices
 [Live Demo](https://imyth.github.io/weex-slide-to-edit/)
 
 ## How to start
