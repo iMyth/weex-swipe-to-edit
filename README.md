@@ -1,4 +1,4 @@
-# weex-slide-to-edit
+# weex-swipe-to-edit
 
 ## Demo for mobile devices
 [Live Demo](https://imyth.github.io/weex-slide-to-edit/)
