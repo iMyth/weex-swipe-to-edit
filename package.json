@@ -40,7 +40,7 @@
     "css-loader": "^0.26.1",
     "postcss-plugin-px2rem": "^0.7.0",
     "postcss-plugin-weex": "^0.1.6",
-    "serve": "^1.4.0",
+    "serve": ">=7.0.0",
     "uglifyjs-webpack-plugin": "^1.1.6",
     "url-loader": "^0.6.2",
     "vue-loader": "^12.2.2",
