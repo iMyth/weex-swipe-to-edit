@@ -1,7 +1,7 @@
 # weex-swipe-to-edit
 
 ## Demo for mobile devices
-[Live Demo](https://imyth.github.io/weex-slide-to-edit/)
+[Live Demo](https://imyth.github.io/weex-swipe-to-edit/)
 
 ## How to start
 
