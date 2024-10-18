@@ -27,7 +27,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "fs-extra": "^4.0.3",
-    "vue": "^2.5.13",
+    "vue": "^3.0.0",
     "weex-html5": "^0.4.1",
     "weex-vue-render": "^1.0.13"
   },
